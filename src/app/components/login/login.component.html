@@ -1,0 +1,38 @@
+<div class="container p-5">
+    <h1 class="mb-5">Inicio de Sesión</h1>
+    <div>
+        <form [formGroup]="form" class="text-end">
+            <input id="input-email" formControlName="email" type="email" placeholder="Correo electrónico" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert p-0">
+                    <div *ngIf="email?.errors?.['required']">
+                        El campo Correo electrónico es obligatorio.
+                    </div>
+                    <div *ngIf="email?.errors?.['email']">
+                        El campo Correo electrónico no es correcto.
+                    </div>
+                </div>
+            </div>
+
+            <input id="input-password" formControlName="password" type="password" placeholder="Contraseña" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert p-0">
+                    <div *ngIf="password?.errors?.['required']">
+                        El campo Contraseña es obligatorio.
+                    </div>
+                    <div *ngIf="password?.errors?.['minlength']">
+                        El campo Contraseña debe tener al menos 8 caracteres.
+                    </div>
+                    <div *ngIf="password?.errors?.['maxlength']">
+                        El campo Contraseña debe tener máximo 12 caracteres.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-danger" [routerLink]="['/']">Atrás</button>
+                <button class="btn btn-primary" (click)="login()" [disabled]="form.invalid">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+</div>

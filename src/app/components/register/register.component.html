@@ -1,0 +1,86 @@
+<div class="container p-5">
+    <h1 class="mb-5">Registro</h1>
+    <div>
+        <form [formGroup]="form" class="text-end">
+            <input id="input-name" formControlName="name" type="text" placeholder="Nombres" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert p-0">
+                    <div *ngIf="name?.errors?.['required']">
+                        El campo Nombres es obligatorio.
+                    </div>
+                    <div *ngIf="name?.errors?.['minlength']">
+                        El campo Nombres debe tener al menos 3 caracteres.
+                    </div>
+                </div>
+            </div>
+
+            <input id="input-lastname" formControlName="lastName" type="text" placeholder="Apellidos" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)" class="alert p-0">
+                    <div *ngIf="lastName?.errors?.['required']">
+                        El campo Apellidos es obligatorio.
+                    </div>
+                    <div *ngIf="lastName?.errors?.['minlength']">
+                        El campo Apellidos debe tener al menos 3 caracteres.
+                    </div>
+                </div>
+            </div>
+
+            <select id="input-docType" formControlName="documentType" placeholder="Tipo de documento" class="form-select">
+                <option value="" selected>Seleccione un tipo de documento</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="RC">Registro Civil</option>
+            </select>
+            <div class="mb-2">
+                <div *ngIf="documentType?.invalid && (documentType?.dirty || documentType?.touched)" class="alert p-0">
+                    <div *ngIf="documentType?.errors?.['required']">
+                        El campo Tipo de documento es obligatorio.
+                    </div>
+                </div>
+            </div>
+
+            <input id="input-document" formControlName="document" type="text" placeholder="Número de documento de identidad" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="document?.invalid && (document?.dirty || document?.touched)" class="alert p-0">
+                    <div *ngIf="document?.errors?.['required']">
+                        El campo Número de documento de identidad es obligatorio.
+                    </div>
+                </div>
+            </div>
+
+            <input id="input-email" formControlName="email" type="email" placeholder="Correo electrónico" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert p-0">
+                    <div *ngIf="email?.errors?.['required']">
+                        El campo Correo electrónico es obligatorio.
+                    </div>
+                    <div *ngIf="email?.errors?.['email']">
+                        El campo Correo electrónico no es correcto.
+                    </div>
+                </div>
+            </div>
+
+            <input id="input-password" formControlName="password" type="password" placeholder="Contraseña" class="form-control">
+            <div class="mb-2">
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert p-0">
+                    <div *ngIf="password?.errors?.['required']">
+                        El campo Contraseña es obligatorio.
+                    </div>
+                    <div *ngIf="password?.errors?.['minlength']">
+                        El campo Contraseña debe tener al menos 8 caracteres.
+                    </div>
+                    <div *ngIf="password?.errors?.['maxlength']">
+                        El campo Contraseña debe tener máximo 12 caracteres.
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-danger" [routerLink]="['/']">Atrás</button>
+                <button class="btn btn-primary" (click)="register()" [disabled]="form.invalid">Registarse</button>
+            </div>
+        </form>
+    </div>
+</div>
