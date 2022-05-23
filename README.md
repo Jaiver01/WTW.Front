@@ -6,22 +6,43 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Requirements 📋
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+_Angular CLI_
 
-## Build
+```
+$ npm i @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Instalación 🔧
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+_Clone the project_
 
-## Running end-to-end tests
+```
+$ git clone https://github.com/Jaiver01/WTW.Front.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+_Go to directory and install dependencies_
 
-## Further help
+```
+$ cd WTW.Front
+~WTW.Front$ npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Run_
+
+```
+~WTW.Front$ ng serve
+```
+
+_Navigate to `http://localhost:4200/`_
+
+# Author ✒️
+
+ * [**Jaiver Elias Ariza Guevara**](https://github.com/Jaiver01)
+
+
+
+---
+⌨️ por [Jaiver Ariza](https://github.com/Jaiver01)
